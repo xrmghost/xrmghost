@@ -9,37 +9,35 @@
 
 # Xrmghost
 
-> **Your last broken deploy was the last one.**
+> Plugins that pass on your machine, not just in a sandbox.
 
-Xrmghost runs your Power Platform plugins locally, before the deploy. Your AI agent writes them. Xrmghost validates them. No more deploy-test-fail-redo cycles.
+You're on GitHub, looking at the `xrmghost/xrmghost` repository — this is the product's home base in the org, and the right place to start if you landed here first. Xrmghost lets your AI agent write Dataverse plugins and Custom APIs, then proves they work by running them against a simulated environment on your own machine, before anything touches a real deploy.
 
 ---
 
-## The Dynamics dev loop is broken
+## Why a simulated Dataverse beats a shared sandbox
 
-Deploy. Wait. Test. Fail. Fix. Redeploy.
+A shared cloud sandbox tells you what broke only after you've already waited for a deploy — and by then the answer is buried in trace logs, shared by whoever else is using the same environment. Xrmghost skips that wait: the plugin executes locally, against a faithful simulation of the platform, so the failure shows up in seconds, on data you control, with nobody else's changes in the way.
 
-You burn 5–20 minutes every time you ask *"why doesn't this work here?"* — dozens of times a day. Wrong field name. Missing security role. An edge case nobody tested that only shows up once it's in production.
+## The agent does the loop, you review the result
 
-Xrmghost ends it. Your plugin runs on your machine, against a faithfully simulated Dataverse — not on a shared cloud sandbox, not after a 2–10 minute deploy.
+You (or your agent) write the plugin or Custom API. The agent invokes Xrmghost as a skill to run it locally, reads the result, and fixes what's wrong — wrong field name, missing security role, an edge case nobody wrote a test for. That cycle repeats without you touching a deploy pipeline. What lands on your desk for review is code that has already been proven to run.
 
-## How it works
+## What's public, what isn't
 
-Tell your agent to write a plugin. The agent uses Xrmghost as a skill. Xrmghost runs the plugin locally against a simulated Dataverse. The agent sees what breaks and fixes it. You review the final code and commit.
+The core engine stays closed for now, but the pieces you can read, reference, or build against are public and split by concern:
 
-## Find your plugin bugs before production does
+| Repository | What you'll find there |
+|---|---|
+| **[xrmghost-docs](https://github.com/xrmghost/xrmghost-docs)** | Source of the documentation site — install steps, CLI reference, architecture notes. |
+| **[xrmghost-skills](https://github.com/xrmghost/xrmghost-skills)** | The Agent Skills that teach Claude Code, Copilot, Codex, and others to drive the local run/debug loop. |
+| **[xrmghost-attributes](https://github.com/xrmghost/xrmghost-attributes)** | The `.NET` attribute library plugins are decorated with — usable standalone, no other Xrmghost component required. |
+| **[.github](https://github.com/xrmghost/.github)** | The org-wide profile — a shorter map of the whole organization if this repo isn't where you want to be. |
 
-Wrong field names. Missing security roles. Edge cases nobody tested. Caught locally. Never shipped.
+## Go deeper
 
-## Start here
-
-Read the docs and run the getting started: **[docs.xrmghost.tech](https://docs.xrmghost.tech)**
-
-More at [www.xrmghost.tech](https://www.xrmghost.tech).
-
-## This organization
-
-Each repository's own README is the source of truth for its scope, maturity, and usage. Explore the public repositories to see what's here.
+- Full install and CLI walkthrough: **[docs.xrmghost.tech](https://docs.xrmghost.tech)**
+- Product overview and pricing: **[www.xrmghost.tech](https://www.xrmghost.tech)**
 
 ---
 
