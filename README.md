@@ -33,7 +33,7 @@ The core engine stays closed for now, but the pieces you can read, reference, or
 | **[xrmghost-skills](https://github.com/xrmghost/xrmghost-skills)** | The Agent Skills that teach Claude Code, Copilot, Codex, and others to drive the local run/debug loop. |
 | **[xrmghost-attributes](https://github.com/xrmghost/xrmghost-attributes)** | The `.NET` attribute library plugins are decorated with — usable standalone, no other Xrmghost component required. |
 | **[.github](https://github.com/xrmghost/.github)** | The org-wide profile — a shorter map of the whole organization if this repo isn't where you want to be. |
-| **[XrmGhost.Cli](https://www.nuget.org/packages/XrmGhost.Cli)** | The dotnet tool you actually install — `dotnet tool install -g XrmGhost.Cli` gets you the `xg` command line without cloning anything. |
+| **[XrmGhost.Cli](https://www.nuget.org/packages/XrmGhost.Cli)** | The .NET global tool package, for CI pipelines only — `dotnet tool install -g XrmGhost.Cli`. On your machine, install with `winget install XrmGhost.Cli`, which brings the signed `xg` and its runtime host in one step. |
 | **[XrmGhost.Attributes](https://www.nuget.org/packages/XrmGhost.Attributes)** | Prebuilt NuGet package for the attribute library above — pull it into your plugin project directly instead of building the source repo yourself. |
 
 ## Go deeper
