@@ -23,6 +23,31 @@ A shared cloud sandbox tells you what broke only after you've already waited for
 
 You (or your agent) write the plugin or Custom API. The agent invokes Xrmghost as a skill to run it locally, reads the result, and fixes what's wrong — wrong field name, missing security role, an edge case nobody wrote a test for. That cycle repeats without you touching a deploy pipeline. What lands on your desk for review is code that has already been proven to run.
 
+## Install
+
+Three ways to install `xg` on a Windows desktop, in order of preference. The first two do not require the .NET SDK.
+
+### 1. Scoop
+
+Does not require the .NET SDK.
+
+```
+scoop bucket add xrmghost https://github.com/xrmghost/xrmghost
+scoop install xrmghost/xg
+```
+
+### 2. PowerShell
+
+Does not require the .NET SDK.
+
+```
+irm https://github.com/xrmghost/xrmghost/releases/latest/download/install.ps1 | iex
+```
+
+### 3. Manual ZIP
+
+Open the [latest release](https://github.com/xrmghost/xrmghost/releases/latest) and download the signed asset `xrmghost-cli-<version>-full.zip` (win-x64, self-contained), where `<version>` is the release version shown on that page. Extract it and put the folder on your `PATH`.
+
 ## What's public, what isn't
 
 The core engine stays closed for now, but the pieces you can read, reference, or build against are public and split by concern:
@@ -33,7 +58,7 @@ The core engine stays closed for now, but the pieces you can read, reference, or
 | **[xrmghost-skills](https://github.com/xrmghost/xrmghost-skills)** | The Agent Skills that teach Claude Code, Copilot, Codex, and others to drive the local run/debug loop. |
 | **[xrmghost-attributes](https://github.com/xrmghost/xrmghost-attributes)** | The `.NET` attribute library plugins are decorated with — usable standalone, no other Xrmghost component required. |
 | **[.github](https://github.com/xrmghost/.github)** | The org-wide profile — a shorter map of the whole organization if this repo isn't where you want to be. |
-| **[XrmGhost.Cli](https://www.nuget.org/packages/XrmGhost.Cli)** | The dotnet tool you actually install — `dotnet tool install -g XrmGhost.Cli` gets you the `xg` command line without cloning anything. |
+| **[XrmGhost.Cli](https://www.nuget.org/packages/XrmGhost.Cli)** | The global tool for CI and automation — `dotnet tool install -g XrmGhost.Cli` gets you the `xg` command line where the .NET SDK is already available. For desktop installs, see [Install](#install) above. |
 | **[XrmGhost.Attributes](https://www.nuget.org/packages/XrmGhost.Attributes)** | Prebuilt NuGet package for the attribute library above — pull it into your plugin project directly instead of building the source repo yourself. |
 
 ## Go deeper
