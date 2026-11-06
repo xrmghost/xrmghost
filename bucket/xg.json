@@ -1,0 +1,29 @@
+{
+  "version": "1.7.9",
+  "description": "Command-line interface for XrmGhost plugin execution and environment management.",
+  "homepage": "https://docs.xrmghost.tech/cli/",
+  "license": {
+    "identifier": "Proprietary",
+    "url": "https://www.xrmghost.tech/legal/xrmghost-license"
+  },
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/xrmghost/xrmghost/releases/download/v1.7.9/xrmghost-cli-1.7.9-full.zip",
+      "hash": "d0fbea8271480502e2263f0bcea27e26a6872a1653bb2ee06f1ab7700c203d59"
+    }
+  },
+  "bin": "xg.exe",
+  "checkver": {
+    "github": "https://github.com/xrmghost/xrmghost"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/xrmghost/xrmghost/releases/download/v$version/xrmghost-cli-$version-full.zip"
+      }
+    },
+    "hash": {
+      "url": "$url.sha256"
+    }
+  }
+}
