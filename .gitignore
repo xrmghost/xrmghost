@@ -1,0 +1,3 @@
+
+# Internal swarm reports never go into public repos
+docs/swarm/
