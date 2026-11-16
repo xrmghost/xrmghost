@@ -1,5 +1,5 @@
 {
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Command-line interface for XrmGhost plugin execution and environment management.",
   "homepage": "https://docs.xrmghost.tech/cli/",
   "license": {
@@ -8,8 +8,8 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/xrmghost/xrmghost/releases/download/v1.8.1/xrmghost-cli-1.8.1-full.zip",
-      "hash": "78cec579d2bd4b07637052dc5268a7b277af08613fe169172ed5ee34b1f64841"
+      "url": "https://github.com/xrmghost/xrmghost/releases/download/v1.8.2/xrmghost-cli-1.8.2-full.zip",
+      "hash": "fe76f6eb9cd448c7aa8ae756292035c78e6715ad6e9cc1b6d28db2b30584b080"
     }
   },
   "env_add_path": ".",
