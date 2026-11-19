@@ -9,7 +9,7 @@
 
 # Xrmghost
 
-> Plugins that pass on your machine, not just in a sandbox.
+> XrmGhost runs your real, compiled Dataverse plugins locally so you — or your coding agent — can iterate in seconds instead of deploying to read trace logs.
 
 You're on GitHub, looking at the `xrmghost/xrmghost` repository — this is the product's home base in the org, and the right place to start if you landed here first. Xrmghost lets your AI agent write Dataverse plugins and Custom APIs, then proves they work by running them against a simulated environment on your own machine, before anything touches a real deploy.
 
